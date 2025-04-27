@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <unistd.h>
 
 int	ft_nbrlen(long n);
 int	ft_printf(char const *format, ...);

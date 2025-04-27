@@ -19,8 +19,6 @@ NAME = libftprintf.a
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
-#CFLAGS += -Wpedantic -Wshadow -fsanitize=address -g3
-# -Wconversion 
 
 ##### FILES #####
 
@@ -35,26 +33,16 @@ SRC =	ft_printf.c			\
 
 OBJ = $(SRC:%.c=%.o)
 
-##### LIBS #####
-
-LFT_NAME = libft.a
-LFT_DIR = libft
-LFT = $(LFT_DIR)/$(LFT_NAME)
 
 ##### RULES #####
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LFT)
-	cp $(LFT) .
-	mv $(LFT_NAME) $(NAME)
 	ar -rcs $(NAME) $(OBJ)
 
-$(LFT):
-	make -sC $(LFT_DIR)
 
 clean:
-	make fclean -sC $(LFT_DIR)
 	rm -f $(OBJ) || true
 
 fclean: clean

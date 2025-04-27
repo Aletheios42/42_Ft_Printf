@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "ft_printf.h"
 
 int	ft_printf(char const *format, ...)
@@ -38,9 +37,3 @@ int	ft_printf(char const *format, ...)
 	va_end(ap);
 	return (count);
 }
-// int	main(void)
-// {
-// 	//ft_printf("Hola, me llamo: %i\n %s", 12343, "Alejandro");
-// 	ft_printf("me llamo Ale %d", 12);
-// 	return (0);
-// }

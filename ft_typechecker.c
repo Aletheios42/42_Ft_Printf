@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_typechecker(char format, va_list ap)
 {
@@ -34,8 +32,3 @@ int	ft_typechecker(char format, va_list ap)
 		return (ft_putchar('%'));
 	return (0);
 }
-
-	// printf("%c\n", format);
-	// write (1, "HOLA\n",5);
-	// write (1, &format, 1);
-	// return 0;
