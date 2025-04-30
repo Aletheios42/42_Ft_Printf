@@ -11,42 +11,47 @@
 # **************************************************************************** #
 
 ##### NAME #####
-
 NAME = libftprintf.a
 
+##### DIRECTORIES #####
+OBJ_DIR = Objs
+
 ##### COMPILER #####
-
 CC = gcc
-
 CFLAGS = -Wall -Wextra -Werror
 
 ##### FILES #####
+SRC =	ft_printf.c		\
+	ft_typechecker.c	\
+	ft_putnbr.c		\
+	ft_putunbr.c		\
+	ft_puthex.c		\
+	ft_putchar.c		\
+	ft_putstr.c		\
+	ft_putptr.c		\
 
-SRC =	ft_printf.c			\
-		ft_typechecker.c	\
-		ft_putnbr.c			\
-		ft_putunbr.c		\
-		ft_puthex.c			\
-		ft_putchar.c		\
-		ft_putstr.c			\
-		ft_putptr.c			\
-
-OBJ = $(SRC:%.c=%.o)
-
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
 ##### RULES #####
-
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LFT)
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJ_DIR) $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -f $(OBJ) || true
+	@rm -rf $(OBJ_DIR)
+	@echo "Objetos de ft_printf eliminados"
 
 fclean: clean
-	rm -f $(NAME) || true
+	@rm -f $(NAME)
+	@echo "Biblioteca ft_printf eliminada"
 
 re: fclean all
 
