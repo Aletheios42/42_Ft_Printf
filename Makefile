@@ -22,13 +22,15 @@ CFLAGS = -Wall -Wextra -Werror
 
 ##### FILES #####
 SRC =	ft_printf.c		\
-	ft_typechecker.c	\
-	ft_putnbr.c		\
-	ft_putunbr.c		\
-	ft_puthex.c		\
-	ft_putchar.c		\
-	ft_putstr.c		\
-	ft_putptr.c		\
+		ft_typechecker.c	\
+		ft_putnbr.c		\
+		ft_putunbr.c		\
+		ft_puthex.c		\
+		ft_putchar.c		\
+		ft_putstr.c		\
+		ft_putptr.c		\
+		ft_data_tree.c \
+		ft_token_list.c 
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 

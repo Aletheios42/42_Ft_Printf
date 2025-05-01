@@ -16,6 +16,10 @@
 # include <stdarg.h>
 # include <unistd.h>
 
+typedef enum e_token_type t_token_type;
+typedef struct s_token t_token;
+typedef struct s_tree t_tree;
+
 int	ft_nbrlen(long n);
 int	ft_printf(char const *format, ...);
 int	ft_typechecker(char format, va_list ap);
@@ -26,4 +30,9 @@ int	ft_puthex(unsigned long n, char *hexa_base);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putptr(unsigned long ptr);
+
+int		ft_print_token(t_token *token);
+int		ft_print_token_list(t_token *tokens);
+int		ft_print_tree_indent(int depth);
+int		ft_print_tree(t_tree *tree, int depth);
 #endif

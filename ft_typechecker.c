@@ -28,6 +28,10 @@ int	ft_typechecker(char format, va_list ap)
 		return (ft_putstr(va_arg(ap, char *)));
 	if (format == 'p')
 		return (ft_putptr(va_arg(ap, unsigned long)));
+	if (format == 'T')
+		return (ft_print_token_list(va_arg(ap, t_token *)));
+	if (format == 'R')
+		return (ft_print_tree(va_arg(ap, t_tree *), 0));
 	if (format == '%')
 		return (ft_putchar('%'));
 	return (0);
